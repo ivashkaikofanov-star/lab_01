@@ -1,0 +1,32 @@
+# 1. Каким инструментом собирать пакет и через какой модуль
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"  # Имя модуля-сборщика
+
+# 2. Информация о проекте: имя, версия, Python, зависимости
+[project]
+name = "toolkit"
+version = "0.1.0"
+description = "Калькулятор и конвертер"
+requires-python = ">=3.11"
+dependencies = []  # Внешние пакеты
+
+# 3. Дополнительные инструменты для разработки
+[project.optional-dependencies]
+test = ["pytest"]
+lint = ["ruff"]
+
+# 4. Место для поиска и установки пакета toolkit
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# 5. Настройка pytest: где искать тесты и как их запускать
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+addopts = "-v --tb=short"  # Флаги для запуска pytest
+
+# 6. Настройка максимальной длины строки по PEP 8
+[tool.ruff]
+line-length = 79
