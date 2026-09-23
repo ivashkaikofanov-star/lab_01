@@ -1,3 +1,5 @@
+"""Токенизация арифметических выражений."""
+
 from toolkit.errors import InvalidExpressionError
 
 
