@@ -4,7 +4,7 @@ class ToolkitError(Exception):
     """Главная ветка всех ошибок."""
 
 
-class DivisionByZeroError(ToolkitError):
+class DivisionError(ToolkitError):
     """Деление на ноль."""
 
 
@@ -14,11 +14,11 @@ class InvalidExpressionError(ToolkitError):
     """
 
 
-class IncorrectUnitError(ToolkitError):
+class UnknownUnitError(ToolkitError):
     """Неизвестная единица измерения."""
 
 
-class BellowZeroError(ToolkitError):
+class BelowAbsoluteZeroError(ToolkitError):
     """Температура ниже абсолютного нуля."""
 
 
