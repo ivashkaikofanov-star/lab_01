@@ -118,17 +118,17 @@ def evaluate(rpn: list) -> int | float:
 def calculate(expression: str) -> int | float:
     """Вычислить значение арифметического выражения.
 
-    Связывает все этапы: токенизация, валидация, перевод
+    Объединяет токенизацию, валидацию, перевод
     в RPN, вычисление.
 
     Args:
         expression: Строка с выражением, например "2 + 3 * 4".
 
     Returns:
-        Результат вычисления в виде float.
+        Результат вычисления(float).
 
     Raises:
-        InvalidExpressionError: Если выражение некорректно.
+        InvalidExpressionError: Если выражение неправильное.
         DivisionError: Если в выражении есть деление на ноль.
     """
     tokens = tokenize(expression)
