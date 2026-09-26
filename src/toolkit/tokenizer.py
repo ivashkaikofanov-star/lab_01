@@ -7,9 +7,10 @@ def tokenize(expression: str) -> list:
     """Разбить арифметическое выражение на токены.
 
     Токены — кортежи (тип, значение). Типы: NUMBER, OPERATION,
-    UNARY_OPERATION. Значение NUMBER — float, OPERATION — str,
-    UNARY_OPERATION — str. Пробелы игнорируются.
-    Точка допускается только внутри числа и должна 
+    UNARY_OPERATION. Значение NUMBER — int или float в
+    зависимости от наличия точки,
+    OPERATION и UNARY_OPERATION — str. Пробелы игнорируются.
+    Точка допускается только внутри числа и должна
     быть окружена цифрами.
 
     Args:
@@ -51,7 +52,11 @@ def tokenize(expression: str) -> list:
         # Обрабатываем символ после цифры
         elif state == 'NUMBER':
             if char.isspace():
-                tokens.append((state, float(current_token)))
+                if '.' in current_token:
+                    value = float(current_token)
+                else:
+                    value = int(current_token)
+                tokens.append((state, value))
                 current_token = ''
                 state = 'SPACE_AFTER_NUMBER'
             elif char == '.' and '.' not in current_token:
@@ -63,7 +68,11 @@ def tokenize(expression: str) -> list:
                 state = 'NUMBER'
                 current_token += char
             elif char in '-+/*':
-                tokens.append((state, float(current_token)))
+                if '.' in current_token:
+                    value = float(current_token)
+                else:
+                    value = int(current_token)
+                tokens.append((state, value))
                 state = 'OPERATION'
                 current_token = char
                 tokens.append((state, current_token))
@@ -125,7 +134,11 @@ def tokenize(expression: str) -> list:
                     f"Символ {char!r} недопустим после точки"
                 )
     if state == 'NUMBER':
-        tokens.append((state, float(current_token)))
+        if '.' in current_token:
+            value = float(current_token)
+        else:
+            value = int(current_token)
+        tokens.append((state, value))
     elif state == 'DOT':
         raise InvalidExpressionError("Число не может заканчиваться точкой")
     return tokens

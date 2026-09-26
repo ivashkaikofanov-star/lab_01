@@ -92,7 +92,7 @@ def operation(element: tuple, number1: float,
     raise InvalidExpressionError(f"Неизвестная операция: {element[1]!r}")
 
 
-def evaluate(rpn: list) -> float:
+def evaluate(rpn: list) -> int | float:
     """Вычислить выражение в обратной польской нотации.
 
     Использует стек значений: числа кладутся в стек, операторы
@@ -115,7 +115,7 @@ def evaluate(rpn: list) -> float:
     return stack[-1][1]
 
 
-def calculate(expression: str) -> float:
+def calculate(expression: str) -> int | float:
     """Вычислить значение арифметического выражения.
 
     Связывает все этапы: токенизация, валидация, перевод

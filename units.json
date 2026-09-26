@@ -1,0 +1,11 @@
+{
+"mm" : {"group": "length", "coefficient": 0.001, "shift": 0.0},
+"cm" : {"group": "length", "coefficient": 0.01, "shift": 0.0},
+"m" : {"group": "length", "coefficient": 1.0, "shift": 0.0},
+"km" : {"group": "length", "coefficient": 1000.0, "shift": 0.0},
+"g" : {"group": "mass", "coefficient": 0.001, "shift": 0.0},
+"kg" : {"group": "mass", "coefficient": 1.0, "shift": 0.0},
+"c" : {"group": "temperature", "coefficient": 1.0, "shift": 0.0},
+"f" : {"group": "temperature", "coefficient": 0.5555555555555556, "shift": -17.77777777777778},
+"k" : {"group": "temperature", "coefficient": 1.0, "shift": -273.15}
+}
