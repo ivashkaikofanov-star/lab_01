@@ -17,7 +17,7 @@ def parse_number(text: str) -> int | float:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="toolkit", 
+        prog="toolkit",
         description="Калькулятор и конвертер.",
         epilog=(
             "Привет, дорогой друг, "
