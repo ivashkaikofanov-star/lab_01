@@ -81,7 +81,7 @@ def build_parser() -> argparse.ArgumentParser:
     calc_parser = subparsers.add_parser(
         "calc", help="Вычислить арифметическое выражение.")
     calc_parser.add_argument(
-        "expression", help="Выражение")
+        "expression", nargs = "?", default = "", help="Выражение")
     convert_parser = subparsers.add_parser(
         "convert", help="Сконвертировать значение между единицами.")
     convert_parser.add_argument(
