@@ -20,7 +20,7 @@ def load_units() -> dict:
 units = load_units()
 
 
-def convert(value: float | int, from_unit: str, to_unit: str) -> float | int:
+def convert(value: float, from_unit: str, to_unit: str) -> float | int:
     """Перевести значение из одной единицы измерения в другую.
 
     Поддерживает длину (mm, cm, m, km), массу (g, kg) и температуру

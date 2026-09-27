@@ -11,6 +11,7 @@ def run_cli(*args: str) -> subprocess.CompletedProcess:
         command,
         capture_output=True,
         text=True,
+        check = False,
     )
 
 
